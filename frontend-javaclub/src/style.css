@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+
+#preloader {
+  background: #e3b505 url(./assets/logo.gif) no-repeat center;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  position: fixed;
+}
+
+@layer base {
+  body {
+    font-family: 'Just Another Hand', cursive;
+    color: #382923;
+    height: 100vh;
+  }
+  /* Breakpoint test */
+  body::before {
+    @apply content-["*"] sm:content-["SM"] md:content-["MD"] lg:content-["LG"] xl:content-["XL"] 2xl:content-["2Xl"] z-[100] font-mono text-6xl fixed text-red-600 right-2 top-20;
+  }
+}
+
+@layer components {
+  .video-btn {
+    @apply bg-[#e3b505] w-[4.5rem] text-3xl flex justify-between rounded-lg px-2 py-1 relative items-center;
+  }
+  .video-btn-on::before {
+    @apply bg-[#382923] content-[""] w-[50%] h-[100%] rounded-lg absolute left-[0];
+  }
+  .video-btn-off::before {
+    @apply bg-[#382923] content-[""] w-[50%] h-[100%] rounded-lg absolute left-[50%];
+  }
+}
+
+@layer utilities {
+}
+
+/* Burger menu */
+.navBtn .bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #e3b505;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 10px;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+.navBtn {
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+}
+/* Burger menu Ends here*/
