@@ -1,12 +1,13 @@
 import bannerImg from '../assets/logo.gif';
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
 const Header = () => {
   const [isHidden, setIsHidden] = useState(false);
 
   return (
     <header>
       <nav
-        className={`bg-transBrown h-full fixed md:static md:h-auto overflow-auto ease-in-out duration-500 drop-shadow-xl md:w-full py-2 text-2xl md:block z-50 ${
+        className={`bg-transBrown h-full fixed md:static tracking-wider md:h-auto overflow-auto ease-in-out duration-500 drop-shadow-xl md:w-full py-2 text-2xl md:block z-50 ${
           !isHidden ? 'w-48' : ' w-0'
         }`}
       >
@@ -20,32 +21,32 @@ const Header = () => {
           {/* Links */}
           <div className="flex flex-col text-center mt-10 md:mt-0 md:flex-row">
             {[
-              ['Home', '/create'],
-              ['Product', '/create'],
-              ['Contact', '/create'],
-              ['About', '/create'],
+              ['Home', '/'],
+              ['Product', '/product'],
+              ['Contact', '/'],
+              ['About', '/'],
             ].map(([title, url], i) => (
-              <a key={i} href={url} className="px-4 mb-4 md:mb-0">
+              <Link key={i} to={url} className="px-4 mb-4 md:mb-0">
                 {title}
-              </a>
+              </Link>
             ))}
           </div>
           {/* Login && Cart Button */}
           <div className="flex flex-col md:flex-row justify-end">
-            <button
-              href="http://"
+            <Link
+              to="/cart"
               className="border-2 border-slate-500 px-3 rounded-md mx-2 my-2"
             >
               <i className="fa-solid fa-cart-shopping text-base px-1 py-2"></i>
               Cart
-            </button>
-            <button
-              href="http://"
+            </Link>
+            <Link
+              to="/user"
               className="border-2 border-slate-500 px-3 rounded-md mx-2 my-2"
             >
               <i className="fa-solid fa-user text-base px-1 py-2"></i>
               Login
-            </button>
+            </Link>
           </div>
         </div>
       </nav>

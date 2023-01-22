@@ -55,7 +55,7 @@ const products = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
     category: 'Cake',
     price: 30.88,
-    countInStock: 4,
+    countInStock: 0,
     rating: 3.5,
     numberReviews: 6,
   },
@@ -73,4 +73,4 @@ const products = [
   },
 ];
 
-export default products;
+module.exports = products;

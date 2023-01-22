@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 
 const Rating = ({ratingVal, revVal, color}) => {
   return (
@@ -73,10 +73,10 @@ const Rating = ({ratingVal, revVal, color}) => {
   );
 };
 
-Rating.propTypes = {
-  ratingVal: PropTypes.number.isRequired,
-  revVal: PropTypes.string.isRequired,
-  color: PropTypes.string,
-};
+// Rating.propTypes = {
+//   ratingVal: PropTypes.number.isRequired,
+//   revVal: PropTypes.string.isRequired,
+//   color: PropTypes.string,
+// };
 
 export default Rating;

@@ -16,7 +16,7 @@
   body {
     font-family: 'Just Another Hand', cursive;
     color: #382923;
-    height: 100vh;
+    background-color: #f7f7f7;
   }
   /* Breakpoint test */
   body::before {

@@ -12,6 +12,9 @@ module.exports = {
         black: '#191919',
         grey: '#a9b2ac',
       },
+      fontFamily: {
+        hand: 'Just Another Hand',
+      },
     },
   },
   plugins: [require('tailwindcss'), require('autoprefixer')],
