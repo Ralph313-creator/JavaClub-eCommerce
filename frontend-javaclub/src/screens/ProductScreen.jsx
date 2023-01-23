@@ -63,7 +63,9 @@ const ProductScreen = () => {
               <tr className="border h-[4rem]">
                 <th className="w-[8rem]">Status: </th>
                 <td className="w-[8rem] text-center">
-                  {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
+                  {product.countInStock > 0
+                    ? `In Stock ${product.countInStock}`
+                    : 'Out of Stock'}
                 </td>
               </tr>
               <tr>
