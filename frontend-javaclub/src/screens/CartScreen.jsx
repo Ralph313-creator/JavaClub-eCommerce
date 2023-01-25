@@ -4,14 +4,18 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Message} from '../components/Message';
 import {addToCart} from '../action/cartActions';
 
-const CartScreen = ({id, location, history}) => {
-  const productId = id;
-  let qty;
-  if (location) {
-    qty = new URLSearchParams(location.search).get('qty');
-  }
+const CartScreen = ({match, location, history}) => {
+  const productId = match.params.id;
 
-  console.log(productId, qty);
+  const qty = location.search ? Number(location.search.split('=')[1]) : 1;
+
+  const dispatch = useDispatch;
+
+  useEffect(() => {
+    if (productId) {
+      dispatch(addToCart(productId, qty));
+    }
+  }, [dispatch, productId, qty]);
 
   return <div>CartScreen</div>;
 };
