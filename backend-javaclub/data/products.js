@@ -1,6 +1,6 @@
 const products = [
   {
-    name: 'Cake 1',
+    name: 'Birthday Cake',
     image: '/images/Cupcake-1.jpg',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
@@ -8,18 +8,18 @@ const products = [
     price: 80.88,
     countInStock: 15,
     rating: 2.5,
-    numberReviews: 4,
+    numberReviews: 10,
   },
   {
-    name: 'Cake 2',
+    name: 'Cupcake',
     image: '/images/Cupcake-2.jpg',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
     category: 'Cake',
     price: 80.88,
-    countInStock: 0,
+    countInStock: 10,
     rating: 3.5,
-    numberReviews: 8,
+    numberReviews: 10,
   },
   {
     name: 'Cake 3',
@@ -28,7 +28,7 @@ const products = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
     category: 'Cake',
     price: 80.88,
-    countInStock: 80,
+    countInStock: 0,
     rating: 4.5,
     numberReviews: 6,
   },
@@ -44,25 +44,25 @@ const products = [
     numberReviews: 180,
   },
   {
-    name: 'Cake 5',
+    name: 'Cake ko',
     image: '/images/Cupcake-5.jpg',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
     category: 'Cake',
     price: 30.88,
-    countInStock: 0,
+    countInStock: 8,
     rating: 3.5,
-    numberReviews: 6,
+    numberReviews: 0,
   },
   {
-    name: 'Cake 6',
+    name: 'Cake ni sir Jhyx',
     image: '/images/Cupcake-6.jpg',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
     category: 'Cake',
     price: 50.88,
-    countInStock: 20,
-    rating: 4.5,
+    countInStock: 3,
+    rating: 4,
     numberReviews: 14,
   },
 ];

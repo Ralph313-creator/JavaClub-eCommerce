@@ -6,8 +6,9 @@ const Header = () => {
 
   return (
     <header>
+      <div className="w-full h-[4.2rem] hidden md:block"></div>
       <nav
-        className={`bg-transBrown h-full fixed md:static tracking-wider md:h-auto overflow-auto ease-in-out duration-500 drop-shadow-xl md:w-full py-2 text-2xl md:block z-50 ${
+        className={`bg-transBrown h-[100vh] top-0 fixed tracking-wider md:h-auto overflow-auto ease-in-out duration-500 drop-shadow-xl md:w-full py-2 text-2xl md:block z-50 ${
           !isHidden ? 'w-48' : ' w-0'
         }`}
       >

@@ -6,10 +6,22 @@
 
 #preloader {
   background: #e3b505 url(./assets/logo.gif) no-repeat center;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   z-index: 1000;
   position: fixed;
+}
+
+#loader {
+  background: #e3b505 url(./assets/logo.gif) no-repeat center;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @layer base {
@@ -33,6 +45,9 @@
   }
   .video-btn-off::before {
     @apply bg-[#382923] content-[""] w-[50%] h-[100%] rounded-lg absolute left-[50%];
+  }
+  .btn-black {
+    @apply bg-black text-white rounded-md px-8 py-2 font-hand;
   }
 }
 

@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './style.css';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import {BrowserRouter} from 'react-router-dom';
+import store from './store';
+import './style.css';
 
 const preload = document.querySelector('#preloader');
 window.addEventListener('load', () => {
@@ -11,9 +13,9 @@ window.addEventListener('load', () => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </Provider>
 );

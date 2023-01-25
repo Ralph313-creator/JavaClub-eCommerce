@@ -16,7 +16,8 @@ const SocialIcon = () => {
             <i className="text-white drop-shadow-2xl border-white border hover:bg-transBrown rounded-full p-2 m-1 fa-brands fa-google-plus"></i>
           </a>
           <a href="/">
-            <i className="text-white drop-shadow-2xl border-white border hover:bg-transBrown rounded-full p-2 m-1 fa-brands fa-instagram"></i>
+            <i className="text-white drop-shadow-2xl border-white border hover:bg-transBrown rounded-full p-2 m-1 fa-brands 
+            fa-instagram"></i>             
           </a>
         </div>
       </div>
