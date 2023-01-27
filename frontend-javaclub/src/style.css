@@ -47,7 +47,7 @@
     @apply bg-[#382923] content-[""] w-[50%] h-[100%] rounded-lg absolute left-[50%];
   }
   .btn-black {
-    @apply bg-black text-white rounded-md px-8 py-2 font-hand;
+    @apply bg-black text-white rounded-md px-8 py-2 font-hand hover:bg-brightYellow font-sans;
   }
 }
 

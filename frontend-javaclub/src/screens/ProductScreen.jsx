@@ -97,7 +97,7 @@ const ProductScreen = () => {
                       }
                       className={`btn-black ${
                         product.countInStock <= 0
-                          ? 'bg-[#cccccc] text-[#666666] '
+                          ? 'bg-[#cccccc] text-[#666666] hover:bg-[#cccccc] '
                           : ''
                       }`}
                     >
