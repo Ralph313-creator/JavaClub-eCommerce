@@ -1,25 +1,26 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {Link, useParams, useNavigate} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import Rating from '../components/Rating';
 import {listProductDetails} from '../action/productActions';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 
-const ProductScreen = () => {
-  const {id} = useParams();
-  const navigate = useNavigate();
+const ProductScreen = ({match}) => {
   const [qty, setQty] = useState(1);
+  const history = useHistory(); // use useHistory hook from react-router-dom
+
   const dispatch = useDispatch();
+
   const productDetails = useSelector((state) => state.productDetails);
   const {loading, error, product} = productDetails;
 
   useEffect(() => {
-    dispatch(listProductDetails(id));
-  }, [dispatch, id]);
+    dispatch(listProductDetails(match.params.id));
+  }, [dispatch, match]);
 
   const addToCartHandler = () => {
-    navigate(`/cart/${id}?qty=${qty}`);
+    history.push(`/cart/${match.params.id}?qty=${qty}`); // changed id to match.params.id
   };
 
   return (

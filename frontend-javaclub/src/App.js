@@ -1,24 +1,24 @@
-import {Routes, Route} from 'react-router-dom';
+import React from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import HomeScreen from './screens/HomeScreen';
 import AllproductScreen from './screens/AllproductScreen';
-import ProductScreen from './screens/ProductScreen';
 import CartScreen from './screens/CartScreen';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      {/* <Hero /> */}
-      <Routes>
-        <Route path="/" element={<HomeScreen />} />
-        <Route path="/product" element={<AllproductScreen />} />
-        <Route path="/product/:id" element={<ProductScreen />} />
-        <Route path="/cart/:id?" element={<CartScreen />} />
-      </Routes>
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Route path="/" component={HomeScreen} exact />
+        <Route path="/products" component={AllproductScreen} />
+        <Route path="/product/:id" component={ProductScreen} />
+        <Route path="/cart/:id?" component={CartScreen} />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

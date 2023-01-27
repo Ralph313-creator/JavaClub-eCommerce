@@ -23,7 +23,7 @@ const Header = () => {
           <div className="flex flex-col text-center mt-10 md:mt-0 md:flex-row">
             {[
               ['Home', '/'],
-              ['Product', '/product'],
+              ['Product', '/products'],
               ['Contact', '/'],
               ['About', '/'],
             ].map(([title, url], i) => (
