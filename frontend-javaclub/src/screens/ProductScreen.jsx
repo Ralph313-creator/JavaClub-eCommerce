@@ -1,26 +1,25 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {Link, useHistory} from 'react-router-dom';
+import {Link, useParams, useNavigate} from 'react-router-dom';
 import Rating from '../components/Rating';
 import {listProductDetails} from '../action/productActions';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 
-const ProductScreen = ({match}) => {
+const ProductScreen = () => {
+  const {id} = useParams();
+  const navigate = useNavigate();
   const [qty, setQty] = useState(1);
-  const history = useHistory(); // use useHistory hook from react-router-dom
-
   const dispatch = useDispatch();
-
   const productDetails = useSelector((state) => state.productDetails);
   const {loading, error, product} = productDetails;
 
   useEffect(() => {
-    dispatch(listProductDetails(match.params.id));
-  }, [dispatch, match]);
+    dispatch(listProductDetails(id));
+  }, [dispatch, id]);
 
-  const addToCartHandler = () => {c
-    history.push(`/cart/${match.params.id}?qty=${qty}`); // changed id to match.params.id
+  const addToCartHandler = () => {
+    navigate(`/cart/${id}?qty=${qty}`);
   };
 
   return (
@@ -93,11 +92,13 @@ const ProductScreen = ({match}) => {
                 <tr>
                   <th colSpan={2} className="h-20">
                     <button
-                      onClick={addToCartHandler}
+                      onClick={
+                        product.countInStock > 0 ? addToCartHandler : null
+                      }
                       className={`btn-black ${
-                        product.countInStock > 0
-                          ? ''
-                          : 'disable bg-[#cccccc] text-[#666666] '
+                        product.countInStock <= 0
+                          ? 'bg-[#cccccc] text-[#666666] '
+                          : ''
                       }`}
                     >
                       ADD TO CART

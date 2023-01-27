@@ -3,7 +3,6 @@ import {useParams} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {addToCart} from '../action/cartActions';
 
-
 const CartScreen = () => {
   // Fetch the productId from the URL
   const {id: productId} = useParams();

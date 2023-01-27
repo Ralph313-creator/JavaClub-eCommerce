@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {listProducts} from '../action/productActions';
+import ProductCard from '../components/ProductCard';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
-import ProductCard from '../components/ProductCard';
+import {listProducts} from '../action/productActions';
 
 const ProductScreen = () => {
   const dispatch = useDispatch();
