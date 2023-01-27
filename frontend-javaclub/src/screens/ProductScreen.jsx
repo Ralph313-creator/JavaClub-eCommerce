@@ -19,7 +19,7 @@ const ProductScreen = ({match}) => {
     dispatch(listProductDetails(match.params.id));
   }, [dispatch, match]);
 
-  const addToCartHandler = () => {
+  const addToCartHandler = () => {c
     history.push(`/cart/${match.params.id}?qty=${qty}`); // changed id to match.params.id
   };
 
