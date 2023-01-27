@@ -184,6 +184,11 @@ const CartScreen = () => {
                                     ? 'bg-[#cccccc] text-[#666666] hover:bg-[#cccccc] '
                                     : ''
                                 }`}
+                                onClick={
+                                  cartItems.length === 0
+                                    ? null
+                                    : checkoutHandler
+                                }
                               >
                                 PROCCED TO CHECKOUT
                               </button>
