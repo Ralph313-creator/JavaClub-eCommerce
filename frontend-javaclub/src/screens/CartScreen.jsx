@@ -1,15 +1,18 @@
 import React, {useEffect} from 'react';
-import {Link} from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux';
-import {Message} from '../components/Message';
+import {useParams} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
 import {addToCart} from '../action/cartActions';
 
-const CartScreen = ({match, location, history}) => {
-  const productId = match.params.id;
 
-  const qty = location.search ? Number(location.search.split('=')[1]) : 1;
+const CartScreen = () => {
+  // Fetch the productId from the URL
+  const {id: productId} = useParams();
 
-  const dispatch = useDispatch;
+  // Fetch the value of 'qty' from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const qty = Number(urlParams.get('qty')) || 1;
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (productId) {
