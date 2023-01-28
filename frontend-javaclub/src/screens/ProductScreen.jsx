@@ -39,7 +39,7 @@ const ProductScreen = () => {
             <img className="w-[30rem]" src={product.image} alt={product.name} />
           </div>
 
-          <div className="drop-shadow-lg bg-slate-100 flex flex-col my-4 p-2 order-last basis-[50rem] 2xl:basis-[28rem] mx-18">
+          <div className="shadow-md hover:shadow-lg bg-white flex flex-col my-4 p-2 order-last basis-[50rem] 2xl:basis-[28rem] mx-18">
             <h1 className="mb-5 mx-2 text-lg font-bold">{product.name}</h1>
             <p className="mb-5 mx-2">Price: ₱{product.price}</p>
             <div className="mb-5 mx-2">
@@ -59,7 +59,7 @@ const ProductScreen = () => {
           </div>
 
           <div className="my-4 mx-10 2xl:order-last">
-            <table className="border bg-slate-100 drop-shadow-md">
+            <table className="border bg-white shadow-md hover:shadow-lg">
               <tbody>
                 <tr className="border h-[4rem]">
                   <th className="w-[8rem]">Price: </th>

@@ -1,15 +1,37 @@
 import bannerImg from '../assets/logo.gif';
 import {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import {Link, NavLink, useLocation} from 'react-router-dom';
+import {logout} from '../action/userAction';
+
 const Header = () => {
   const [isHidden, setIsHidden] = useState(false);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const location = useLocation();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const {userInfo} = userLogin;
+
+  const dispatch = useDispatch();
+
+  const logoutHandler = () => {
+    dispatch(logout());
+    window.location.reload();
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setIsOpen(!isOpen);
+  };
 
   return (
     <header>
       <div className="w-full h-[4.2rem] hidden md:block"></div>
       <nav
-        className={`bg-transBrown h-[100vh] top-0 fixed tracking-wider md:h-auto overflow-auto ease-in-out duration-500 drop-shadow-xl md:w-full py-2 text-2xl md:block z-50 ${
-          !isHidden ? 'w-48' : ' w-0'
+        className={`bg-transBrown h-[100vh] top-0 fixed tracking-wider md:h-auto ease-in-out duration-500 drop-shadow-xl md:w-full py-2 text-2xl md:overflow-visible md:block z-50 ${
+          !isHidden ? 'w-48' : 'overflow-hidden w-0'
         }`}
       >
         {/* Contianer */}
@@ -19,38 +41,112 @@ const Header = () => {
             <img src={bannerImg} alt="Logo" className="w-14" />
             <h1 className="">JavaClub</h1>
           </div>
+
           {/* Links */}
           <div className="flex flex-col text-center mt-10 md:mt-0 md:flex-row">
             {[
               ['Home', '/'],
               ['Product', '/product'],
-              ['Contact', '/'],
-              ['About', '/'],
+              ['Contact', '/#contact'],
+              ['About', '/#about'],
             ].map(([title, url], i) => (
-              <Link key={i} to={url} className="px-4 mb-4 md:mb-0">
+              <NavLink
+                key={i}
+                to={url}
+                className={`mb-4 md:mb-0 px-5 hover:bg-brown mx-1 hover:text-brightYellow rounded animate__animated animate__fadeInLeft ${
+                  location.pathname === url && 'active-link'
+                }`}
+                activeclassname="active-link"
+              >
                 {title}
-              </Link>
+              </NavLink>
             ))}
           </div>
+
           {/* Login && Cart Button */}
           <div className="flex flex-col md:flex-row justify-end">
             <Link
               to="/cart"
-              className="border-2 border-slate-500 px-3 rounded-md mx-2 my-2"
+              className="border-2 border-brown active:border-blue-300 px-3 rounded-md mx-2 my-2"
             >
               <i className="fa-solid fa-cart-shopping text-base px-1 py-2"></i>
               Cart
             </Link>
-            <Link
-              to="/user"
-              className="border-2 border-slate-500 px-3 rounded-md mx-2 my-2"
-            >
-              <i className="fa-solid fa-user text-base px-1 py-2"></i>
-              Login
-            </Link>
+
+            {userInfo && userInfo.isAdmin ? (
+              <button
+                className="relative border-2 border-brown px-2 rounded-md mx-2 my-2 active:border-blue-300"
+                onClick={handleClick}
+              >
+                <i className="fa-solid fa-user text-base mr-2 py-2"></i>
+                {userInfo.name}
+                {!isOpen ? (
+                  <i className="fa-solid fa-caret-down text-sm ml-2 "></i>
+                ) : (
+                  <i className="fa-solid fa-caret-up text-sm ml-2 "></i>
+                )}
+                {isOpen && (
+                  <div className="bg-transBrown absolute w-[6rem] left-[6rem]  md:left-[-.15rem] bottom-[0px] md:bottom-[-7.5rem] justify-center z-[50] flex flex-col shadow-xl border rounded-md border-brown px-1 py-2">
+                    {[
+                      ['Admin', '/admin'],
+                      ['Profile', '/profile'],
+                      ['Logout', '/login'],
+                    ].map(([link, url], i) => (
+                      <Link
+                        key={i}
+                        to={url}
+                        className="px-5 hover:bg-brown hover:text-brightYellow rounded"
+                        onClick={i === 2 && logoutHandler}
+                      >
+                        {link}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </button>
+            ) : userInfo ? (
+              <button
+                className="relative border-2 border-brown px-2 rounded-md mx-2 my-2 active:border-blue-300"
+                onClick={handleClick}
+              >
+                <i className="fa-solid fa-user text-base mr-2 py-2"></i>
+                {userInfo.name}
+                {!isOpen ? (
+                  <i className="fa-solid fa-caret-down text-sm ml-2 "></i>
+                ) : (
+                  <i className="fa-solid fa-caret-up text-sm ml-2 "></i>
+                )}
+                {isOpen && (
+                  <div className="bg-transBrown absolute w-[6rem] left-[6rem]  md:left-[-.15rem] bottom-[0px] md:bottom-[-5.5rem] justify-center z-[50] flex flex-col shadow-xl border rounded-md border-brown px-1 py-2">
+                    {[
+                      ['Profile', '/profile'],
+                      ['Logout', '/login'],
+                    ].map(([link, url], i) => (
+                      <Link
+                        key={i}
+                        to={url}
+                        className="px-5 hover:bg-brown hover:text-brightYellow rounded"
+                        onClick={i === 1 && logoutHandler}
+                      >
+                        {link}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className="relative border-2 border-brown px-2 rounded-md mx-2 my-2 active:border-blue-300"
+              >
+                <i className="fa-solid fa-user text-base mr-2 py-2"></i>
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </nav>
+
       {/* Burger button */}
       <div
         className={`navBtn right-[5%] top-[5%] z-50 md:hidden ${

@@ -28,7 +28,7 @@
   body {
     font-family: 'Just Another Hand', cursive;
     color: #382923;
-    background-color: #f7f7f7;
+    background-color: #e5e7eb;
   }
   /* Breakpoint test */
   body::before {
@@ -52,6 +52,9 @@
 }
 
 @layer utilities {
+  .active-link {
+    @apply bg-brown text-brightYellow;
+  }
 }
 
 /* Burger menu */

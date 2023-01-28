@@ -42,14 +42,22 @@ const CartScreen = () => {
       ) : error ? (
         <Message message={error} />
       ) : (
-        <div className="h-screen bg-gray-300 font-sans">
+        <div className="h-screen font-sans">
           <div className="py-12">
-            <div className="max-w-md mx-auto bg-gray-100 shadow-lg rounded-lg  md:max-w-[80rem]">
+            <div className="mx-auto bg-white max-h-[50rem] overflow-scroll shadow-lg rounded-lg md:max-w-[80rem]">
               <div className="md:flex ">
                 <div className="w-full p-4 px-5 py-5">
-                  <div className="md:grid md:grid-cols-3 gap-2 ">
+                  <div className="md:grid md:grid-cols-3 gap-5">
                     <div className="col-span-2">
-                      <h1 className="text-xl font-medium ">Shopping Cart</h1>
+                      <div className="flex items-center justify-between">
+                        <h1 className="text-xl font-medium ">Shopping Cart</h1>
+                        <Link to="/product">
+                          <i className="fa fa-arrow-left text-sm pr-2"></i>
+                          <span className="text-md  font-medium text-blue-500">
+                            Continue Shopping
+                          </span>
+                        </Link>
+                      </div>
 
                       {/* Cart Item */}
                       {cartItems.length === 0 ? (
@@ -58,7 +66,7 @@ const CartScreen = () => {
                         cartItems.map((item) => (
                           <div
                             key={item.product}
-                            className="flex justify-between items-center mt-6 pt-6 border-t"
+                            className="flex justify-evenly items-center mt-6 pt-6 border-t"
                           >
                             <Link to={`/product/${item.product}`}>
                               <div className="flex  items-center">
@@ -122,80 +130,55 @@ const CartScreen = () => {
                           /* End Cart Item */
                         ))
                       )}
-
-                      {/* go back button */}
-                      <div className="flex justify-between items-center mt-6 pt-6 border-t">
-                        <div className="flex items-center">
-                          <Link to="/product">
-                            <i className="fa fa-arrow-left text-sm pr-2"></i>
-                            <span className="text-md  font-medium text-blue-500">
-                              Continue Shopping
-                            </span>
-                          </Link>
-                        </div>
-
-                        {/* Subtotal */}
-                        <div className="flex justify-center items-end">
-                          <span className="text-sm font-medium text-gray-400 mr-1">
-                            Subtotal:
-                          </span>
-                          <span className="text-lg font-bold text-gray-800 ">
-                            ₱
-                            {cartItems
-                              .reduce(
-                                (acc, item) => acc + item.qty * item.price,
-                                0
-                              )
-                              .toFixed(2)}
-                          </span>
-                        </div>
-                      </div>
                     </div>
 
-                    <div className=" p-5 bg-gray-300 rounded relative h-[15rem] w-[20rem] flex justify-center ">
-                      <table className="w-[15rem] text-left">
-                        <tbody>
-                          <tr>
-                            <th>Total item : </th>
-                            <td className="w-28">
-                              {cartItems.reduce(
-                                (acc, item) => acc + item.qty,
-                                0
-                              )}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>Price:</th>
-                            <td className="w-28">
-                              ₱{' '}
-                              {cartItems
-                                .reduce(
-                                  (acc, item) => acc + item.qty * item.price,
+                    <div className="flex justify-center">
+                      <div className=" p-3 bg-gray-300 shadow-xl rounded relative h-[15rem] w-[20rem] flex justify-center ">
+                        <table className="w-[15rem] text-left">
+                          <tbody>
+                            <tr>
+                              <th>Total item : </th>
+                              <td className="w-28">
+                                {cartItems.reduce(
+                                  (acc, item) => acc + item.qty,
                                   0
-                                )
-                                .toFixed(2)}
-                            </td>
-                          </tr>
-                          <tr className="text-center">
-                            <th colSpan="2">
-                              <button
-                                className={`btn-black whitespace-nowrap ${
-                                  cartItems.length <= 0
-                                    ? 'bg-[#cccccc] text-[#666666] hover:bg-[#cccccc] '
-                                    : ''
-                                }`}
-                                onClick={
-                                  cartItems.length === 0
-                                    ? null
-                                    : checkoutHandler
-                                }
-                              >
-                                PROCCED TO CHECKOUT
-                              </button>
-                            </th>
-                          </tr>
-                        </tbody>
-                      </table>
+                                )}
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>Subtotal:</th>
+                              <td className="w-28">
+                                ₱{' '}
+                                {cartItems
+                                  .reduce(
+                                    (acc, item) => acc + item.qty * item.price,
+                                    0
+                                  )
+                                  .toFixed(2)}
+                              </td>
+                            </tr>
+
+                            <tr className="text-center">
+                              <th colSpan="2">
+                                <button
+                                  className={`btn-black whitespace-nowrap ${
+                                    cartItems.length <= 0
+                                      ? 'bg-[#cccccc] text-[#666666] hover:bg-[#cccccc] '
+                                      : ''
+                                  }`}
+                                  onClick={
+                                    cartItems.length === 0
+                                      ? null
+                                      : checkoutHandler
+                                  }
+                                >
+                                  PROCCED TO CHECKOUT
+                                </button>
+                              </th>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 </div>
