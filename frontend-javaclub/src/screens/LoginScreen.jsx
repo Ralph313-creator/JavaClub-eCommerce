@@ -53,7 +53,7 @@ const LoginScreen = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
         <div className="hidden sm:block">
           <img
-            className="w-full h-screen  object-cover"
+            className="w-full h-screen  object-cover shadow-lg"
             src={loginImg}
             alt=""
           />
@@ -81,14 +81,13 @@ const LoginScreen = () => {
           )}
           <form
             onSubmit={submitHandler}
-            className="max-w-[400px] w-full mx-auto bg-white shadow-lg p-4"
+            className="max-w-[400px] w-full mx-auto bg-white shadow-lg p-4 rounded-md"
           >
-            {/* {attempts < 5 ? <div>Countdown: {countdown}</div> : null} */}
             <h2 className=" text-6xl font-bold text-center py-6">JavaClub</h2>
             <div className="flex flex-col py-2 font-sans">
               <label>Email Address</label>
               <input
-                required={true}
+                required
                 className="border p-2"
                 type="email"
                 value={email}
@@ -99,7 +98,7 @@ const LoginScreen = () => {
             <div className="flex flex-col py-2 font-sans">
               <label>Password</label>
               <input
-                required={true}
+                required
                 className="border p-2 font-sans"
                 type="password"
                 value={password}

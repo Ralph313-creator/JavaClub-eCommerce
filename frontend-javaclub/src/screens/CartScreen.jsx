@@ -42,14 +42,14 @@ const CartScreen = () => {
       ) : error ? (
         <Message message={error} />
       ) : (
-        <div className="h-screen font-sans">
+        <div className="font-sans mx-8">
           <div className="py-12">
-            <div className="mx-auto bg-white max-h-[50rem] overflow-scroll shadow-lg rounded-lg md:max-w-[80rem]">
+            <div className="mx-auto bg-white min-h-[40rem] overflow-auto shadow-lg rounded-lg md:max-w-[80rem]">
               <div className="md:flex ">
                 <div className="w-full p-4 px-5 py-5">
-                  <div className="md:grid md:grid-cols-3 gap-5">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-5">
                     <div className="col-span-2">
-                      <div className="flex items-center justify-between">
+                      <div className="flex flex-col md:flex-row items-center  justify-between">
                         <h1 className="text-xl font-medium ">Shopping Cart</h1>
                         <Link to="/product">
                           <i className="fa fa-arrow-left text-sm pr-2"></i>
@@ -66,18 +66,18 @@ const CartScreen = () => {
                         cartItems.map((item) => (
                           <div
                             key={item.product}
-                            className="flex justify-evenly items-center mt-6 pt-6 border-t"
+                            className="flex flex-col md:flex-row justify-evenly items-center mt-6 pt-6 border-t"
                           >
                             <Link to={`/product/${item.product}`}>
-                              <div className="flex  items-center">
+                              <div className="flex flex-col lg:flex-row items-center justify-center">
                                 <img
                                   src={item.image}
                                   width="200"
-                                  className="rounded-md "
+                                  className="rounded-md order-last lg:order-first"
                                   alt="item.name"
                                 />
 
-                                <div className="flex flex-col ml-3 ">
+                                <div className="flex flex-col ml-3">
                                   <span className="text-md font-medium">
                                     {item.name}
                                   </span>
@@ -87,8 +87,8 @@ const CartScreen = () => {
                                 </div>
                               </div>
                             </Link>
-                            <div className="flex justify-center items-center">
-                              <div className="pr-8 flex">
+                            <div className="flex justify-center items-center my-5">
+                              <div className="mr-3 flex">
                                 <select
                                   className=" border border-brightYellow text-md rounded-lg focus:border-blue-500 w-20 p-2.5 dark:bg-grey  dark:text-black"
                                   value={item.qty}
@@ -132,8 +132,8 @@ const CartScreen = () => {
                       )}
                     </div>
 
-                    <div className="flex justify-center">
-                      <div className=" p-3 bg-gray-300 shadow-xl rounded relative h-[15rem] w-[20rem] flex justify-center ">
+                    <div className="flex justify-center m-3">
+                      <div className=" p-3 bg-gray-200 shadow-xl rounded relative h-[15rem] w-[20rem] flex justify-center">
                         <table className="w-[15rem] text-left">
                           <tbody>
                             <tr>

@@ -1,7 +1,7 @@
 import bannerImg from '../assets/logo.gif';
 import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {Link, NavLink, useLocation} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {logout} from '../action/userAction';
 
 const Header = () => {
@@ -9,7 +9,8 @@ const Header = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const location = useLocation();
+  const cart = useSelector((state) => state.cart);
+  const {cartItems} = cart;
 
   const userLogin = useSelector((state) => state.userLogin);
   const {userInfo} = userLogin;
@@ -18,7 +19,6 @@ const Header = () => {
 
   const logoutHandler = () => {
     dispatch(logout());
-    window.location.reload();
   };
 
   const handleClick = (e) => {
@@ -31,7 +31,7 @@ const Header = () => {
       <div className="w-full h-[4.2rem] hidden md:block"></div>
       <nav
         className={`bg-transBrown h-[100vh] top-0 fixed tracking-wider md:h-auto ease-in-out duration-500 drop-shadow-xl md:w-full py-2 text-2xl md:overflow-visible md:block z-50 ${
-          !isHidden ? 'w-48' : 'overflow-hidden w-0'
+          isHidden ? 'w-48' : 'overflow-hidden w-0'
         }`}
       >
         {/* Contianer */}
@@ -44,33 +44,45 @@ const Header = () => {
 
           {/* Links */}
           <div className="flex flex-col text-center mt-10 md:mt-0 md:flex-row">
-            {[
-              ['Home', '/'],
-              ['Product', '/product'],
-              ['Contact', '/#contact'],
-              ['About', '/#about'],
-            ].map(([title, url], i) => (
-              <NavLink
-                key={i}
-                to={url}
-                className={`mb-4 md:mb-0 px-5 hover:bg-brown mx-1 hover:text-brightYellow rounded animate__animated animate__fadeInLeft ${
-                  location.pathname === url && 'active-link'
-                }`}
-                activeclassname="active-link"
-              >
-                {title}
-              </NavLink>
-            ))}
+            <Link
+              to="/"
+              className="mb-4 md:mb-0 px-5 hover:bg-brown mx-1 hover:text-brightYellow rounded "
+            >
+              Home
+            </Link>
+            <Link
+              to="/product"
+              className="mb-4 md:mb-0 px-5 hover:bg-brown mx-1 hover:text-brightYellow rounded "
+            >
+              Products
+            </Link>
+            <a
+              href="/#about"
+              className="mb-4 md:mb-0 px-5 hover:bg-brown mx-1 hover:text-brightYellow rounded "
+            >
+              About
+            </a>
+            <a
+              href="/#contact"
+              className="mb-4 md:mb-0 px-5 hover:bg-brown mx-1 hover:text-brightYellow rounded "
+            >
+              Contact
+            </a>
           </div>
 
           {/* Login && Cart Button */}
           <div className="flex flex-col md:flex-row justify-end">
             <Link
               to="/cart"
-              className="border-2 border-brown active:border-blue-300 px-3 rounded-md mx-2 my-2"
+              className="border-2 border-brown active:border-blue-300 px-3 rounded-md mx-2 my-2 relative"
             >
               <i className="fa-solid fa-cart-shopping text-base px-1 py-2"></i>
               Cart
+              {cartItems.length > 0 && (
+                <span className=" absolute top-[-17px] left-[-13px] z-50 bg-red-500 rounded-full text-[20px] px-3">
+                  {cartItems.reduce((acc, item) => acc + item.qty, 0)}
+                </span>
+              )}
             </Link>
 
             {userInfo && userInfo.isAdmin ? (
