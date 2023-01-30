@@ -28,7 +28,7 @@
   body {
     font-family: 'Just Another Hand', cursive;
     color: #382923;
-    background-color: #f7f7f7;
+    background-color: #e5e7eb;
   }
   /* Breakpoint test */
   body::before {
@@ -47,11 +47,21 @@
     @apply bg-[#382923] content-[""] w-[50%] h-[100%] rounded-lg absolute left-[50%];
   }
   .btn-black {
-    @apply bg-black text-white rounded-md px-8 py-2 font-hand;
+    @apply bg-black text-white rounded-md px-8 py-2 font-hand hover:bg-brightYellow;
   }
 }
 
 @layer utilities {
+  .active-link {
+    @apply bg-brown text-brightYellow;
+  }
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Burger menu */
