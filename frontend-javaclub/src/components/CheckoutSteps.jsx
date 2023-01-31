@@ -17,7 +17,7 @@ const CheckoutSteps = ({step1, step2, step3, step4}) => {
       </li>
       <li class="mr-4">
         {step2 ? (
-          <Link to="/shipping" class="text-blue-500 hover:text-blue-800">
+          <Link to="/login/shipping" class="text-blue-500 hover:text-blue-800">
             Shipping
           </Link>
         ) : (

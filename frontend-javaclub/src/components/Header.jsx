@@ -162,7 +162,7 @@ const Header = () => {
       {/* Burger button */}
       <div
         className={`navBtn right-[5%] top-[5%] z-50 md:hidden ${
-          !isHidden ? 'change' : ''
+          isHidden ? 'change' : ''
         }`}
         onClick={() => setIsHidden(!isHidden)}
       >

@@ -32,7 +32,6 @@ const ShippingScreen = () => {
             onSubmit={submitHandler}
             className=" w-full h-full bg-white shadow-lg p-4 rounded-md"
           >
-            
             <h2 className=" text-6xl font-bold text-center py-8 capitalize">
               Shipping
               <i className="fa-solid fa-truck-fast ml-4"></i>
