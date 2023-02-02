@@ -6,7 +6,7 @@ const Product = ({product}) => {
     <div className="w-[18rem] h-[28rem] bg-white shadow-md hover:shadow-2xl rounded-xl overflow-hidden">
       <img className="w-[100%]" src={product.image} alt={product['name']} />
 
-      <div className="font-sans text-lg relative p-2 hover:blur-sm">
+      <div className="font-lato font-semibold text-md relative p-2 hover:blur-sm">
         <Link to={`/product/${product._id}`} className="">
           <h3>{product.name}</h3>
           <div>

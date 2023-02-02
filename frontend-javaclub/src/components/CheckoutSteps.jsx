@@ -5,41 +5,53 @@ import {Link} from 'react-router-dom';
 
 const CheckoutSteps = ({step1, step2, step3, step4}) => {
   return (
-    <ul class="flex justify-center items-center mb-4 font-sans text-bold">
-      <li class="mr-4">
+    <ul className="flex justify-center items-center mb-4 font-lato text-bold">
+      <li className="mr-4">
         {step1 ? (
-          <Link to="/login" class="text-blue-500 hover:text-blue-800">
+          <Link
+            to="/login"
+            className="text-darkBrown hover:text-brightYellow font-bold"
+          >
             Sign In
           </Link>
         ) : (
-          <span class="text-gray-500 cursor-not-allowed">Sign In</span>
+          <span className="text-gray-500 cursor-not-allowed">Sign In</span>
         )}
       </li>
-      <li class="mr-4">
+      <li className="mr-4">
         {step2 ? (
-          <Link to="/login/shipping" class="text-blue-500 hover:text-blue-800">
+          <Link
+            to="/login/shipping"
+            className="text-darkBrown hover:text-brightYellow font-bold"
+          >
             Shipping
           </Link>
         ) : (
-          <span class="text-gray-500 cursor-not-allowed">Shipping</span>
+          <span className="text-gray-500 cursor-not-allowed">Shipping</span>
         )}
       </li>
-      <li class="mr-4">
+      <li className="mr-4">
         {step3 ? (
-          <Link to="/payment" class="text-blue-500 hover:text-blue-800">
+          <Link
+            to="/payment"
+            className="text-darkBrown hover:text-brightYellow font-bold"
+          >
             Payment
           </Link>
         ) : (
-          <span class="text-gray-500 cursor-not-allowed">Payment</span>
+          <span className="text-gray-500 cursor-not-allowed">Payment</span>
         )}
       </li>
       <li>
         {step4 ? (
-          <Link to="/placeorder" class="text-blue-500 hover:text-blue-800">
+          <Link
+            to="/placeorder"
+            className="text-darkBrown hover:text-brightYellow font-bold"
+          >
             Place Order
           </Link>
         ) : (
-          <span class="text-gray-500 cursor-not-allowed">Place Order</span>
+          <span className="text-gray-500 cursor-not-allowed">Place Order</span>
         )}
       </li>
     </ul>

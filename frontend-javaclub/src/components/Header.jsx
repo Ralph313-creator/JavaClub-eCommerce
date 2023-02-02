@@ -79,7 +79,7 @@ const Header = () => {
               <i className="fa-solid fa-cart-shopping text-base px-1 py-2"></i>
               Cart
               {cartItems.length > 0 && (
-                <span className=" absolute top-[-17px] left-[-13px] z-50 bg-red-500 rounded-full text-[20px] px-3">
+                <span className=" absolute top-[-17px] left-[-13px] z-50 bg-red-500 rounded-full text-[20px] px-3 shadow-lg">
                   {cartItems.reduce((acc, item) => acc + item.qty, 0)}
                 </span>
               )}

@@ -1,14 +1,19 @@
 import {configureStore} from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
-import {
-  productListReducer,
-  productDetailsReducer,
-} from './reducers/productReducers';
 import {cartReducer} from './reducers/cartReducers';
 import {
+  orderCreateReducer,
+  orderDetailsReducer,
+  orderPayReducer,
+} from './reducers/orderReducers';
+import {
+  productDetailsReducer,
+  productListReducer,
+} from './reducers/productReducers';
+import {
+  userDetailsReducer,
   userLoginReducer,
   userRegisterReducer,
-  userDetailsReducer,
   userUpdateProfileReducer,
 } from './reducers/userReducers';
 
@@ -24,13 +29,18 @@ const shippingAddressFromStorage = localStorage.getItem('shippingAddress')
   ? JSON.parse(localStorage.getItem('shippingAddress'))
   : {};
 
-  const initialState = {
-    cart: {
-      cartItems: cartItemsFromStorage,
-      shippingAddress: shippingAddressFromStorage,
-    },
-    userLogin: { userInfo: userInfoFromStorage },
-  }
+const paymentMethodFromStorage = localStorage.getItem('paymentMethod')
+  ? JSON.parse(localStorage.getItem('paymentMethod'))
+  : {};
+
+const initialState = {
+  cart: {
+    cartItems: cartItemsFromStorage,
+    shippingAddress: shippingAddressFromStorage,
+    paymentMethod: paymentMethodFromStorage,
+  },
+  userLogin: {userInfo: userInfoFromStorage},
+};
 
 const store = configureStore({
   reducer: {
@@ -41,6 +51,9 @@ const store = configureStore({
     userRegister: userRegisterReducer,
     userDetails: userDetailsReducer,
     userUpdateProfile: userUpdateProfileReducer,
+    orderCreate: orderCreateReducer,
+    orderDetails: orderDetailsReducer,
+    orderPay: orderPayReducer,
   },
 
   middleware: [thunk],

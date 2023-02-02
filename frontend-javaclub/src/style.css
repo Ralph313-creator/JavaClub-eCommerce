@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 #preloader {
   background: #e3b505 url(./assets/logo.gif) no-repeat center;
@@ -47,7 +48,7 @@
     @apply bg-[#382923] content-[""] w-[50%] h-[100%] rounded-lg absolute left-[50%];
   }
   .btn-black {
-    @apply bg-black text-white rounded-md px-8 py-2 font-hand hover:bg-brightYellow;
+    @apply bg-black text-white rounded-md px-8 py-2 hover:bg-brightYellow font-lato uppercase;
   }
 }
 

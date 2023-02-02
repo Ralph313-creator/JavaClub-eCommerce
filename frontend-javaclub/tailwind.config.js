@@ -14,6 +14,7 @@ module.exports = {
       },
       fontFamily: {
         hand: 'Just Another Hand',
+        lato: "'Lato', sans-serif",
       },
     },
   },

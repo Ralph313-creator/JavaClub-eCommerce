@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {Link, useParams, useNavigate} from 'react-router-dom';
+import {useParams, useNavigate} from 'react-router-dom';
 import Rating from '../components/Rating';
 import {listProductDetails} from '../action/productActions';
 import Loader from '../components/Loader';
@@ -11,7 +11,7 @@ const ProductScreen = () => {
   const navigate = useNavigate();
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
-  
+
   const productDetails = useSelector((state) => state.productDetails);
   const {loading, error, product} = productDetails;
 
@@ -26,9 +26,9 @@ const ProductScreen = () => {
   return (
     <>
       <div className="absolute font-bold left-[10%] sm:left-[20%] top-[6.5%] md:top-[15%]">
-        <Link className="btn-black" to="/product">
+        <button className="btn-black" onClick={() => navigate(-1)}>
           GO BACK
-        </Link>
+        </button>
       </div>
       {loading ? (
         <Loader />
