@@ -40,17 +40,13 @@ const RegisterScreen = () => {
   return (
     <>
       {loading && <Loader />}
-      <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
-        <div className="hidden sm:block">
-          <img
-            className="w-full h-screen  object-cover"
-            src={loginImg}
-            alt=""
-          />
-        </div>
+      <div className="bg"></div>
+    <div className="bg bg2"></div>
+    <div className="bg bg3"></div>
 
-        <div className=" flex flex-col justify-center">
-          {error && (
+    <div className="login-card-container">   
+        <div className="login-card">
+        {error && (
             <div className="flex justify-center ">
               <div className="bg-[#d82f424a] text-red p-2 text-center max-w-[25rem] font-sans rounded mb-4">
                 {<Message />}
@@ -64,79 +60,71 @@ const RegisterScreen = () => {
               </div>
             </div>
           )}
-          <form
-            onSubmit={submitHandler}
-            className="max-w-[400px] w-full mx-auto bg-white shadow-lg p-4 rounded-md"
-          >
-            <h2 className=" text-6xl font-bold text-center py-6">JavaClub</h2>
-
-            <div className="flex flex-col py-2 font-sans">
-              <label>Name</label>
-              <input
-                required
-                className="border p-2"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Your name"
-              />
+            <div className="login-card-header text-5xl">
+                <h1 className=''>Sign Up</h1>
             </div>
+            <form className="login-card-form" onSubmit={submitHandler}>
+              
+                <div className="form-item font-lato">
+                    <input type="text" value={name}
+                onChange={(e) => setName(e.target.value)} placeholder="Enter Name" required />
+                </div>
 
-            <div className="flex flex-col py-2 font-sans">
-              <label>Email Address</label>
-              <input
-                required
-                className="border p-2"
-                type="email"
+                <div className="form-item font-lato">
+                    <input type="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Ex. email@gmail.com"
-              />
-            </div>
+                onChange={(e) => setEmail(e.target.value)} placeholder="Enter Email" id="emailForm" required />
+                </div>
 
-            <div className="flex flex-col py-2 font-sans">
-              <label>Password</label>
-              <input
-                required
-                className="border p-2 font-sans"
-                type="password"
+                <div className="form-item font-lato">  
+                    <input type="password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter you Password here"
-              />
-            </div>
+                onChange={(e) => setPassword(e.target.value)} placeholder="Enter Password" id="passwordForm" required />
+                </div>
 
-            <div className="flex flex-col py-2 font-sans">
-              <label>Confirm Password</label>
-              <input
-                required
-                className="border p-2 font-sans"
-                type="password"
+                <div className="form-item font-lato">  
+                    <input type="password"
                 value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="Confirm you Password here"
-              />
-            </div>
+                onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm Password" id="passwordForm" required />
+                </div>
 
-            <button
-              type="submit"
-              className="font-sans border w-full my-5 py-2 btn-black text-white"
-            >
-              Register
-            </button>
-            <div className="font-sans">
-              <p>
-                Already have an account?
-                <Link
+
+
+                <div className="form-item-other">
+                </div>
+                <button className='btn-black' type="submit">Sign Up</button>
+            </form>
+            <div className="login-card-footer">
+                Do have an account? <Link
                   to={redirect ? `/login?redirect=${redirect}` : '/login'}
                   className="text-blue-500 hover:text-blue-600"
                 >
                   {' '}
                   Login
                 </Link>
-              </p>
             </div>
-          </form>
+            <div className="login-card-social font-lato">
+                <div>Other Sign-In Options</div>
+                <div className="login-card-social-btns">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-google"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8"></path>
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
         </div>
       </div>
     </>

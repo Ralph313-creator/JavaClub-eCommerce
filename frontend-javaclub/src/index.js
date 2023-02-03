@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import store from './store';
 import './style.css';
+import './Loginstyle.css';
 
 const preload = document.querySelector('#preloader');
 window.addEventListener('load', () => {
