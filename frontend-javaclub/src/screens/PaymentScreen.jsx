@@ -26,7 +26,7 @@ const PaymentScreen = () => {
 
   return (
     <>
-      <div className="grid my-10  justify-items-stretch mx-auto max-w-xl">
+      <div className="grid my-10  justify-items-stretch mx-auto max-w-md">
         <CheckoutSteps step1 step2 step3 />
         <div className="relative">
           <form
