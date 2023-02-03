@@ -16,7 +16,7 @@ const ProductScreen = () => {
 
   return (
     <div className=" min-h-screen">
-      <h1 className="text-5xl my-10 ">Lates product</h1>
+      <h1 className="text-5xl my-10 ">Latest product</h1>
       {loading ? (
         <Loader />
       ) : error ? (
