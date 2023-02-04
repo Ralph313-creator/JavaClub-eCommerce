@@ -271,3 +271,21 @@
   background-color: #ffffff;
   color: #001f61;
 }
+
+/* Carousel Products */
+
+.img-carousel-container {
+  height: 25rem;
+  width: 25rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.img-carousel {
+  width: 100%;
+}
+
+.info-product {
+  color: #e3b505;
+  font-size: 3em;
+  line-height: 1.2;
+}

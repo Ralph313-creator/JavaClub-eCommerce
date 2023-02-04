@@ -1,6 +1,6 @@
 const products = [
   {
-    name: 'Birthday Cake',
+    name: 'Cupcake 1',
     image: '/images/Cupcake-1.jpg',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
@@ -11,7 +11,7 @@ const products = [
     numberReviews: 10,
   },
   {
-    name: 'Cupcake',
+    name: 'Cupcake 2',
     image: '/images/Cupcake-2.jpg',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
@@ -22,7 +22,7 @@ const products = [
     numberReviews: 10,
   },
   {
-    name: 'Cake 3',
+    name: 'Cupcake 2',
     image: '/images/Cupcake-3.jpg',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
@@ -33,7 +33,7 @@ const products = [
     numberReviews: 6,
   },
   {
-    name: 'Cake 4',
+    name: 'Cupcake 3',
     image: '/images/Cupcake-4.jpg',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
@@ -44,7 +44,7 @@ const products = [
     numberReviews: 180,
   },
   {
-    name: 'Cake ko',
+    name: 'Cupcake 4',
     image: '/images/Cupcake-5.jpg',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
@@ -55,8 +55,96 @@ const products = [
     numberReviews: 0,
   },
   {
-    name: 'Cake ni sir Jhyx',
+    name: 'Cupcake 5',
     image: '/images/Cupcake-6.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
+    category: 'Cake',
+    price: 50.88,
+    countInStock: 3,
+    rating: 4,
+    numberReviews: 14,
+  },
+  {
+    name: 'Cake 1',
+    image: '/images/Cake-1.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
+    category: 'Cake',
+    price: 50.88,
+    countInStock: 3,
+    rating: 4,
+    numberReviews: 14,
+  },
+  {
+    name: 'Cake 2',
+    image: '/images/Cake-2.png',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
+    category: 'Cake',
+    price: 50.88,
+    countInStock: 3,
+    rating: 4,
+    numberReviews: 14,
+  },
+  {
+    name: 'Cake 3',
+    image: '/images/Cake-3.png',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
+    category: 'Cake',
+    price: 50.88,
+    countInStock: 3,
+    rating: 4,
+    numberReviews: 14,
+  },
+  {
+    name: 'Cake 4',
+    image: '/images/Cake-4.png',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
+    category: 'Cake',
+    price: 50.88,
+    countInStock: 3,
+    rating: 4,
+    numberReviews: 14,
+  },
+  {
+    name: 'Cake 5',
+    image: '/images/Cake-5.png',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
+    category: 'Cake',
+    price: 50.88,
+    countInStock: 3,
+    rating: 4,
+    numberReviews: 14,
+  },
+  {
+    name: 'Cake 6',
+    image: '/images/Cake-6.png',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
+    category: 'Cake',
+    price: 50.88,
+    countInStock: 3,
+    rating: 4,
+    numberReviews: 14,
+  },
+  {
+    name: 'Cake 7',
+    image: '/images/Cake-7.png',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
+    category: 'Cake',
+    price: 50.88,
+    countInStock: 3,
+    rating: 4,
+    numberReviews: 14,
+  },
+  {
+    name: 'Cake 8',
+    image: '/images/Cake-8.png',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor ipsum lectus, eget viverra neque semper at. In ac sodales leo, eget bibendum dolor. Donec accumsan erat sed lorem suscipit viverra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat.',
     category: 'Cake',
